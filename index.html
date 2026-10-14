@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jay Jogani | Data Science | AI &amp; ML Portfolio</title>
+    <meta name="description"
+        content="Jay Jogani — Computer Science Student specializing in Data Analytics, Data Science, and Machine Learning. Turning data into insights and building intelligent solutions." />
+
+    <!-- Open Graph (Social sharing previews) -->
+    <meta property="og:title" content="Jay Jogani | Data Science &amp; AI Portfolio" />
+    <meta property="og:description" content="Computer Science student from Surat passionate about Data Science, Machine Learning &amp; AI-driven solutions." />
+    <meta property="og:image" content="hero-dev.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jay Jogani | Data Science &amp; AI Portfolio" />
+    <meta name="twitter:description" content="CS student specializing in Data Science, ML and Analytics." />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://jayjogani-portfolio.vercel.app/" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ===== CURSOR ===== -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+    <!-- ===== LOADER ===== -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">JJ</div>
+            <div class="loader-bar">
+                <div class="loader-fill"></div>
+            </div>
+            <p class="loader-text">Initializing Portfolio...</p>
+        </div>
+    </div>
+
+    <!-- ===== NAV ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">JJ<span class="dot">.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="https://github.com/jayjogani15" target="_blank" class="btn-nav">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <canvas id="particleCanvas"></canvas>
+            <div class="grid-overlay"></div>
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge animate-up" style="--d:0.1s">
+                <span class="badge-dot"></span>
+                Available for Internships
+            </div>
+            <h1 class="hero-name animate-up" style="--d:0.25s">
+                <span class="name-line">Jay</span>
+                <span class="name-line accent">Jogani</span>
+            </h1>
+            <div class="hero-typewriter animate-up" style="--d:0.4s">
+                <span class="static">I specialize in </span>
+                <span class="typed" id="typed"></span>
+                <span class="cursor-blink">|</span>
+            </div>
+            <p class="hero-bio animate-up" style="--d:0.55s">
+                Computer Science student from <strong>Surat</strong> passionate about transforming raw data into
+                actionable insights. Building intelligent systems at the intersection of Data Science, Machine Learning,
+                and modern web development.
+            </p>
+            <div class="hero-cta animate-up" style="--d:0.7s">
+                <a href="#projects" class="btn-primary magnetic-btn">
+                    <i class="fas fa-rocket"></i> View Projects
+                </a>
+                <a href="#contact" class="btn-secondary magnetic-btn">
+                    <i class="fas fa-paper-plane"></i> Get In Touch
+                </a>
+            </div>
+            <div class="hero-stats animate-up" style="--d:0.85s">
+                <div class="stat">
+                    <span class="stat-num" data-target="4">0</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num" data-target="3">0</span>
+                    <span class="stat-label">Stars</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num" data-target="1">0</span>
+                    <span class="stat-label">Followers</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-img-wrap">
+
+            <!-- Glow aura behind image -->
+            <div class="hero-aura"></div>
+
+            <!-- Direct 3D developer image -->
+            <img src="hero-dev.png" alt="Jay Jogani - Developer" class="hero-dev-img" />
+
+            <!-- Floating skill chips -->
+            <div class="hchip hc-python"><i class="fab fa-python"></i> Python</div>
+            <div class="hchip hc-ml"><i class="fas fa-brain"></i> AI-ML </div>
+            <div class="hchip hc-sql"><i class="fas fa-database"></i> Data Analytics</div>
+            <div class="hchip hc-flask"><i class="fas fa-flask"></i> Data Science</div>
+
+            <!-- GitHub stats pill -->
+            <div class="hero-stats-pill">
+                <span><i class="fab fa-github"></i> <strong>4</strong> Repos</span>
+                <span class="hsp-divider"></span>
+                <span><i class="fas fa-star"></i> <strong>3</strong> Stars</span>
+                <span class="hsp-divider"></span>
+                <span><i class="fas fa-map-marker-alt"></i> Surat, India</span>
+            </div>
+
+        </div>
+        <a href="#about" class="scroll-down" aria-label="Scroll down">
+            <div class="scroll-icon"></div>
+        </a>
+    </section>
+
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"> About</span>
+                <h2 class="section-title">Who Am I?</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I'm <strong>Jay Jogani</strong>, a passionate Computer Science student based in <strong>Surat,
+                            India</strong>. My journey in tech is driven by a deep fascination with data — the stories
+                        it tells and the solutions it enables.
+                    </p>
+                    <p>
+                        I specialize in <strong>Data Analytics</strong>, <strong>Data Science</strong>, and
+                        <strong>Machine Learning</strong>, focusing on turning complex datasets into meaningful insights
+                        and building intelligent web applications.
+                    </p>
+                    <p>
+                        Whether it's crafting interactive dashboards, building ML-powered systems, or creating engaging
+                        user experiences — I bring both analytical rigor and creative vision to every project.
+                    </p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Surat, India</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/jayjogani15" target="_blank">jayjogani15</a>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Computer Science Student</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-cards">
+                    <div class="acard">
+                        <div class="acard-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h3>Data Analytics</h3>
+                        <p>Transforming raw data into actionable business insights with interactive visualizations.</p>
+                    </div>
+                    <div class="acard">
+                        <div class="acard-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Machine Learning</h3>
+                        <p>Building predictive models and intelligent solutions using modern ML frameworks.</p>
+                    </div>
+                    <div class="acard">
+                        <div class="acard-icon"><i class="fas fa-code"></i></div>
+                        <h3>Data science</h3>
+                        <p>Creating responsive, interactive web applications with clean and modern design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02 / Skills</span>
+                <h2 class="section-title">Tech Stack</h2>
+            </div>
+            <div class="skills-grid">
+
+                <div class="skill-category">
+                    <h3 class="cat-title"><i class="fas fa-code"></i> Languages</h3>
+                    <div class="skill-pills">
+                        <span class="pill"><i class="fab fa-python"></i> Python</span>
+                        <span class="pill"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="pill"><i class="fas fa-database"></i> SQL</span>
+                        <span class="pill">C / C++</span>
+                        <span class="pill"><i class="fab fa-html5"></i> HTML5</span>
+                        <span class="pill"><i class="fab fa-css3-alt"></i> CSS3</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="cat-title"><i class="fas fa-brain"></i> Data Science & ML</h3>
+                    <div class="skill-pills">
+                        <span class="pill">Pandas</span>
+                        <span class="pill">NumPy</span>
+                        <span class="pill">Scikit-Learn</span>
+                        <span class="pill">Seaborn</span>
+                        <span class="pill">TensorFlow</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="cat-title"><i class="fas fa-chart-pie"></i> Data Visualization</h3>
+                    <div class="skill-pills">
+                        <span class="pill">Chart.js</span>
+                        <span class="pill">Plotly</span>
+                        <span class="pill">Power BI</span>
+                        <span class="pill">Matplotlib</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="cat-title"><i class="fas fa-server"></i> Backend & Tools</h3>
+                    <div class="skill-pills">
+                        <span class="pill"><i class="fab fa-python"></i> Flask</span>
+                        <span class="pill"><i class="fab fa-github"></i> Git & GitHub</span>
+                        <span class="pill">MySQL</span>
+                        <span class="pill">VS Code</span>
+                        <span class="pill">Jupyter Notebook</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"> Projects</span>
+                <h2 class="section-title"> My Work</h2>
+                <p class="section-sub">Real-world projects from my GitHub — built with passion and purpose.</p>
+            </div>
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <div class="project-card featured">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="project-links">
+                            <a href="https://github.com/jayjogani15/Sales-Analytics---Dashboard" target="_blank"
+                                aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://jayjogani15.github.io/Sales-Analytics---Dashboard/" target="_blank"
+                                aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-badge">Featured · ⭐ 2</div>
+                    <h3 class="project-title">Sales Analytics Dashboard</h3>
+                    <p class="project-desc">A data-driven web application designed to analyze and visualize sales
+                        performance using Python, Flask, and data visualization libraries. Features interactive charts
+                        and insights on revenue trends, regional performance, and sales growth.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>HTML</span>
+                        <span>Chart.js</span>
+                        <span>Data Viz</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-keyboard"></i></div>
+                        <div class="project-links">
+                            <a href="https://github.com/jayjogani15/Typing-speed-webpage" target="_blank"
+                                aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://jayjogani15.github.io/Typing-speed-webpage/" target="_blank"
+                                aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-badge">⭐ 1</div>
+                    <h3 class="project-title">Type Master — Typing Speed Test</h3>
+                    <p class="project-desc">An interactive typing speed test web application with real-time feedback on
+                        WPM, accuracy, and time taken. Features a clean, responsive interface for users to practice
+                        typing and track their progress.</p>
+                    <div class="project-tech">
+                        <span>JavaScript</span>
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-palette"></i></div>
+                        <div class="project-links">
+                            <a href="https://github.com/jayjogani15/Colour-Hunt-Game" target="_blank"
+                                aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://jayjogani15.github.io/Colour-Hunt-Game/" target="_blank"
+                                aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-badge">⭐ 1 · MIT</div>
+                    <h3 class="project-title">Colour Hunt Game</h3>
+                    <p class="project-desc">A fun web-based color recognition game where players must find the correct
+                        color from a grid of tiles before time runs out. As the game progresses, colors become more
+                        similar — increasing the difficulty.</p>
+                    <div class="project-tech">
+                        <span>JavaScript</span>
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>Game Logic</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="projects-footer">
+                <a href="https://github.com/jayjogani15" target="_blank" class="btn-outline">
+                    <i class="fab fa-github"></i> View All on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section class="education section" id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"> Education</span>
+                <h2 class="section-title">My Journey</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2024 – Present</span>
+                        <h3>Computer Science</h3>
+                        <p class="timeline-sub">Bachelor's Degree</p>
+                        <p>Building a strong foundation in Data Structures, Algorithms, and core CS concepts.
+                            Specializing in Data Analytics, Data Science, and Machine Learning.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>GitHub Projects & Open Source</h3>
+                        <p class="timeline-sub">Self-Driven Learning</p>
+                        <p>Built 4 public repositories spanning Data Analytics dashboards, ML-powered applications, and
+                            interactive web tools — turning learning into tangible products.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">Goal</span>
+                        <h3>Data Scientist / ML Engineer / Data Analyst</h3>
+                        <p class="timeline-sub">Career Objective</p>
+                        <p>Aiming to build a career at the intersection of data science and Machine Learning,
+                            contributing AI-driven solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">05 / Contact</span>
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-sub">Open to internships, collaborations, and exciting projects.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:jayjogani83@gmail.com">jayjogani83@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="ci-icon"><i class="fab fa-github"></i></div>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/jayjogani15" target="_blank">github.com/jayjogani15</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Location</h4>
+                            <span>Surat, Gujarat, India</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="ci-icon"><i class="fas fa-user-graduate"></i></div>
+                        <div>
+                            <h4>Status</h4>
+                            <span>Available for Internships</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Web3Forms — free email delivery, no backend needed -->
+                <form class="contact-form" id="contactForm">
+                    <!-- Web3Forms config -->
+                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+                    <input type="hidden" name="subject" value="New message from Portfolio — Jay Jogani" />
+                    <input type="hidden" name="from_name" value="Jay Jogani Portfolio" />
+                    <input type="hidden" name="redirect" value="false" />
+                    <input type="checkbox" name="botcheck" style="display:none" />
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Let's work together..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                    <p class="form-note" id="formNote"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">JJ<span class="dot">.</span></div>
+            <p class="footer-text">Crafted with <i class="fas fa-heart"></i> by Jay Jogani · Surat, India</p>
+            <div class="footer-links">
+                <a href="https://github.com/jayjogani15" target="_blank" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+            </div>
+            <p class="footer-copy">© 2026 Jay Jogani. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

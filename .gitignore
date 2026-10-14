@@ -1,0 +1,15 @@
+# Python helper scripts (not needed for deployment)
+fix_skills.py
+__pycache__/
+*.pyc
+
+# Three.js scene (not used in current version)
+space3d.js
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+*.swp
